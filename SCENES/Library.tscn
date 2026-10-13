@@ -1,3 +1,30 @@
 [gd_scene format=3 uid="uid://bisvrxwd83a8q"]
 
-[node name="Node3D" type="Node3D" unique_id=1426595801]
+[ext_resource type="Texture2D" uid="uid://slspp57rpgu2" path="res://TEXTURES/textures/old_wooden_floor_03_diff_4k.jpg" id="1_1mn88"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_040t7"]
+albedo_texture = ExtResource("1_1mn88")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wi58g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y2kle"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmq02"]
+
+[node name="Node3D" type="Node3D" unique_id=1949580880]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1849707338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.14637, -0.3795718, 0.5738716)
+size = Vector3(53.08528, 0.24085644, 49.790993)
+material = SubResource("StandardMaterial3D_040t7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=624458601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_wi58g")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1791040668]
+transform = Transform3D(54.36816, 0, 0, 0, 1, 0, 0, 0, 1, 10.107964, 0, 25.76569)
+mesh = SubResource("BoxMesh_y2kle")
+material = SubResource("StandardMaterial3D_dmq02")

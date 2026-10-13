@@ -2,7 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://bn6bqtb5hxss0" path="res://bookshelf.glb" id="1_c4b56"]
 
-[node name="Node3D" type="Node3D" unique_id=1087969919]
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4b56"]
+size = Vector3(1.5350952, 1.376648, 0.53715515)
 
-[node name="bookshelf" parent="." unique_id=585161581 instance=ExtResource("1_c4b56")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.7225423, 0, -4.5641785)
+[node name="Node3D" type="Node3D" unique_id=1463011037]
+
+[node name="bookshelf" parent="." unique_id=164530098 instance=ExtResource("1_c4b56")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.9846573, 0, 3.382615)
+
+[node name="Area3D" type="Area3D" parent="bookshelf" unique_id=711558130]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bookshelf/Area3D" unique_id=1080542191]
+transform = Transform3D(15.295477, 0, 0, 0, 15.295477, 0, 0, 0, 15.295477, 0.112175465, 10.147351, 0.019519806)
+shape = SubResource("BoxShape3D_c4b56")
