@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcjoenpprynjn"]
 
-[ext_resource type="PackedScene" uid="uid://ch062uerd1shj" path="res://chair.glb" id="1_jbxvv"]
+[ext_resource type="PackedScene" uid="uid://ch062uerd1shj" path="res://ASSETS/chair.glb" id="1_jbxvv"]
 
 [node name="Node3D" type="Node3D" unique_id=1710124229]
 
