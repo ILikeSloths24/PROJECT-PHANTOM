@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://btnuxrvof3vv3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecyy8"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojkyf"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=315706024]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1719740571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1295094, -0.42077637, 0.12018943, 0.002173795)
+size = Vector3(0.15844727, 1.1040039, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=149629885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1295094, -6.7247953, 0.104003906, 0.002173795)
+size = Vector3(0.15844727, 1.1040039, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=2063981001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1295094, -3.6027913, 0.60485244, 0.0016538948)
+size = Vector3(6.37146, 0.1430664, 0.9770508)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1109334396]
+transform = Transform3D(0.99999994, 0, 0, 0, -5.89759e-08, 1.5783361, 0, -1.3492113, -6.899126e-08, -3.6027913, 0.10662168, -0.99488586)
+size = Vector3(6.37146, 0.1430664, 0.7057495)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1524812554]
+transform = Transform3D(0.99999994, 0, 0, 0, -5.89759e-08, 1.5783361, 0, -1.3492113, -6.899126e-08, -3.6027913, 0.10662168, 0.9586692)
+size = Vector3(6.37146, 0.1430664, 0.7057495)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1441250428]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -3.4990346, -0.11029458, -0.43234304)
+radius = 0.31396484
+height = 6.2993164
+sides = 20
+material = SubResource("StandardMaterial3D_ecyy8")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=1644515733]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -3.4990346, -0.11029458, 0.45618406)
+radius = 0.31396484
+height = 6.2993164
+sides = 20
+material = SubResource("StandardMaterial3D_ojkyf")
