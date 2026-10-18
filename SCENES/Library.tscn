@@ -4,6 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://bafjnl54n8ohl" path="res://SCENES/bookshelf.tscn" id="2_y2kle"]
 [ext_resource type="PackedScene" uid="uid://bfhnw88b18w2p" path="res://SCENES/desk.tscn" id="3_dmq02"]
 [ext_resource type="PackedScene" uid="uid://bcjoenpprynjn" path="res://SCENES/chair.tscn" id="4_d871i"]
+[ext_resource type="PackedScene" uid="uid://btnuxrvof3vv3" path="res://SCENES/light2.tscn" id="5_d871i"]
+[ext_resource type="PackedScene" uid="uid://cnbqh73qx088l" path="res://SCENES/door.tscn" id="6_lji8q"]
+[ext_resource type="PackedScene" uid="uid://b2hqjm7ojbm0g" path="res://SCENES/player.tscn" id="7_lji8q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lji8q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wti71"]
+size = Vector3(131.8042, 1, 132.4502)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_040t7"]
 albedo_texture = ExtResource("1_1mn88")
@@ -30,9 +38,20 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybuh6"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_7ypcm"]
+[sub_resource type="Environment" id="Environment_wti71"]
+background_mode = 1
+glow_enabled = true
+glow_intensity = 0.52
+glow_blend_mode = 0
 
 [node name="Node3D" type="Node3D" unique_id=1949580880]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=723739525]
+physics_material_override = SubResource("PhysicsMaterial_lji8q")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1098277775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.645996, 0, -2.3754883)
+shape = SubResource("BoxShape3D_wti71")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1849707338]
 transform = Transform3D(1, 0, 0, 0, 0.8003595, 0, 0, 0, 1, 10.14637, 0.3069625, 0.5738716)
@@ -60,13 +79,12 @@ mesh = SubResource("BoxMesh_nkyoq")
 material = SubResource("StandardMaterial3D_5bbii")
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="." unique_id=1810837282]
-transform = Transform3D(79.051895, 0, 0, 0, 1.0990003, 0, 0, 0, 60.612103, 8.867704, 11.087936, -3.2878342)
+transform = Transform3D(79.051895, 0, 0, 0, 1.0990003, 0, 0, 0, 60.612103, 8.867704, 9.178852, -3.2878342)
 mesh = SubResource("BoxMesh_cwubm")
 material = SubResource("StandardMaterial3D_ybuh6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=760253843]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3422352, 0)
-mesh = SubResource("CapsuleMesh_7ypcm")
+[node name="CharacterBody3D" parent="." unique_id=1390152046 instance=ExtResource("7_lji8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.665699, 1.7627106, 4.048197)
 
 [node name="Bookshelf" parent="." unique_id=1463011037 instance=ExtResource("2_y2kle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7824163, 0.49722123, 5.9998293)
@@ -292,3 +310,186 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.3
 
 [node name="Node3D2" parent="." unique_id=2010226831 instance=ExtResource("4_d871i")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.367208, 0.42572665, -18.09807)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1651472733]
+environment = SubResource("Environment_wti71")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1989017161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.684178, 7.985921, 1.2362189)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D4" parent="." unique_id=315706024 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5412655, 8.080258, 1.2565098)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1578920231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.684178, 7.985921, -17.609253)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D5" parent="." unique_id=2016997131 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5412655, 8.080258, -17.588963)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=332558567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.684178, 7.985921, 16.413967)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D6" parent="." unique_id=1171288494 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5412655, 8.080258, 16.434258)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1462529529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.602692, 7.985921, 1.2362189)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D7" parent="." unique_id=704484191 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.745604, 8.080258, 1.2565098)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1934440922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.602692, 7.985921, -17.609253)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="." unique_id=75695264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.602692, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="." unique_id=1628669306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.715257, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="." unique_id=586240084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.87204, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="." unique_id=723366039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.191467, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="." unique_id=392144228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.154123, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="." unique_id=1748735093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.93045, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="." unique_id=24060982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.29865, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="." unique_id=1996371598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.395604, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="." unique_id=1299139384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2557983, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="." unique_id=2003035314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3385682, 2.505275, -21.659973)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="." unique_id=1227952200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.602692, 7.985921, 24.526968)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="." unique_id=621048377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.602692, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="." unique_id=1467643695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.715257, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D23" type="OmniLight3D" parent="." unique_id=141289019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.87204, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D24" type="OmniLight3D" parent="." unique_id=1461865414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.191467, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D25" type="OmniLight3D" parent="." unique_id=392561191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.154123, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D26" type="OmniLight3D" parent="." unique_id=1520584882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.93045, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D27" type="OmniLight3D" parent="." unique_id=1719860091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.29865, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D28" type="OmniLight3D" parent="." unique_id=29877661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.395604, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D29" type="OmniLight3D" parent="." unique_id=1715135102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2557983, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="OmniLight3D30" type="OmniLight3D" parent="." unique_id=1958152507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3385682, 2.505275, 20.476248)
+omni_range = 3.116
+omni_attenuation = -0.826
+
+[node name="Node3D8" parent="." unique_id=187595557 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.745604, 8.080258, -17.588963)
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1370626465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.602692, 7.985921, 16.413967)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D9" parent="." unique_id=800318439 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.745604, 8.080258, 16.434258)
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=668466137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.223827, 7.985921, 1.2362189)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D10" parent="." unique_id=1571085483 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.366737, 8.080258, 1.2565098)
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=248965012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.223827, 7.985921, -17.609253)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D11" parent="." unique_id=1714174208 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.366737, 8.080258, -17.588963)
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="." unique_id=58708250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.223827, 7.985921, 16.413967)
+omni_range = 25.399
+omni_attenuation = -0.112
+
+[node name="Node3D12" parent="." unique_id=9055373 instance=ExtResource("5_d871i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.366737, 8.080258, 16.434258)
+
+[node name="Node3D13" parent="." unique_id=1771057593 instance=ExtResource("6_lji8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.893278, 2.6460886, 3.9979982)
