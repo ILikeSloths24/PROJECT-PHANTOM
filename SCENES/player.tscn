@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2hqjm7ojbm0g"]
 
 [ext_resource type="Script" uid="uid://dyfrsql6gfv5s" path="res://SCENES/player.gd" id="1_85nbx"]
+[ext_resource type="PackedScene" uid="uid://8cuuax8flnbh" path="res://SCENES/torch.tscn" id="2_ai16o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_k0u5k"]
 
@@ -23,9 +24,18 @@ shape = SubResource("CapsuleShape3D_85nbx")
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0.6618136, 0)
 
 [node name="Torch_light" type="SpotLight3D" parent="Head" unique_id=717296974]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20065284, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.697937, 0.20803857, -0.81281936)
 light_energy = 13.381
 light_size = 0.702
 spot_range = 736.123
 spot_attenuation = 2.17
 spot_angle = 37.48
+
+[node name="Node3D" parent="Head" unique_id=1598746387 instance=ExtResource("2_ai16o")]
+transform = Transform3D(0.15, 0, 0, 0, -6.5567085e-09, -0.15, 0, 0.15, -6.5567085e-09, -0.7008586, 0.20892137, -0.68728656)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head" unique_id=1266440164]
+transform = Transform3D(1, 0, 0, 0, -0.022861846, 0.99973863, 0, -0.99973863, -0.022861846, -0.73085964, 1.1545806, -0.8165925)
+spot_range = 1.1125102
+spot_attenuation = 0.21
+spot_angle = 18.359253

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://8cuuax8flnbh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow6st"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vn7nx"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6ohy"]
+albedo_color = Color(0.8236291, 0.82362926, 3.85046e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8doo4"]
+
+[node name="Node3D" type="Node3D" unique_id=1598746387]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1172755088]
+material_override = SubResource("StandardMaterial3D_ow6st")
+sides = 12
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=2030866165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0058087, 0)
+material_override = SubResource("StandardMaterial3D_vn7nx")
+rings = 12
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=902813628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0094693, 0)
+material_override = SubResource("StandardMaterial3D_r6ohy")
+radius = 1.029
+sides = 12
+cone = true
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1672120150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0555758, 0)
+material_override = SubResource("StandardMaterial3D_8doo4")
+radius = 0.977
+sides = 12
+cone = true
