@@ -21,3 +21,11 @@ shape = SubResource("CapsuleShape3D_85nbx")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1148941375]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0.6618136, 0)
+
+[node name="Torch_light" type="SpotLight3D" parent="Head" unique_id=717296974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20065284, 0)
+light_energy = 13.381
+light_size = 0.702
+spot_range = 736.123
+spot_attenuation = 2.17
+spot_angle = 37.48

@@ -12,8 +12,8 @@ const WALK_SPEED: float = 4.5
 const SPRINT_SPEED: float = 7.0
 const JUMP_VELOCITY: float = 5.0
 const JUMP_MULTIPLIER_ON_RELEASE: float = 0.75
-const STAND_HEIGHT: float = 1.0
-const CROUCH_HEIGHT: float = 0.5
+const STAND_HEIGHT: float = 0.5
+const CROUCH_HEIGHT: float = 0.2
 
 # Changing variables
 var current_speed: float = 0.0
@@ -72,6 +72,13 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Head.rotate_x(-event.relative.y * mouse_sensitivity)
+
+@onready var Torch_light: SpotLight3D = $Head/Torch_light
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Torch interact"):
+		Torch_light.visible = !Torch_light.visible
+
 
 	$Head.rotation.x = clamp(
 	$Head.rotation.x,
